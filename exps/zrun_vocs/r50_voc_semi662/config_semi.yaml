@@ -60,7 +60,7 @@ trainer: # Required.
 # 3. output files, and loss
 # # # # # # # # # # # # # # 
 saver:
-  snapshot_dir: checkpoints
+  snapshot_dir: /content/drive/MyDrive/checkpoints
   pretrain: ''
   use_tb: False
 
