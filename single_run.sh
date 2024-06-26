@@ -1,9 +1,9 @@
 tport=53907
-ngpu=2
-ROOT=.
+ngpu=1
+ROOT=/content/AugSeg
 
 CUDA_VISIBLE_DEVICES=0,1 \
-python -m torch.distributed.launch \
+torchrun \
     --nproc_per_node=${ngpu} \
     --node_rank=0 \
     --master_port=${tport} \

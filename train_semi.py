@@ -296,9 +296,9 @@ def train(
         lr_scheduler.step() # lr is updated at the iteration level
 
         # obtain labeled and unlabeled data
-        _, image_l, label_l = loader_l_iter.next()
+        _, image_l, label_l = next(loader_l_iter)
         image_l, label_l = image_l.cuda(), label_l.cuda()
-        _, image_u_weak, image_u_aug, _ = loader_u_iter.next()
+        _, image_u_weak, image_u_aug, _ = next(loader_u_iter)
         image_u_weak, image_u_aug = image_u_weak.cuda(), image_u_aug.cuda()
         
         # start the training
