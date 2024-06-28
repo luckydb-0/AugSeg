@@ -63,6 +63,7 @@ saver:
   snapshot_dir: /content/drive/MyDrive/checkpoints
   pretrain: ''
   use_tb: False
+  auto_resume: True
 
 criterion:
   type: CELoss
