@@ -8,7 +8,7 @@ torchrun \
     --node_rank=0 \
     --master_port=${tport} \
     $ROOT/train_semi.py \
-    --config=$ROOT/exps/zrun_vocs/r50_voc_semi662/config_semi.yaml --seed 2 --port ${tport}
+    --config=$ROOT/exps/zrun_vocs/r50_voc_classical_semi366/config_semi.yaml --seed 2 --port ${tport}
 
 # ---- -----
     # --config=$ROOT/exps/zrun_vocs/voc_semi_fine92/config_semi.yaml --seed 2 --port ${tport}
