@@ -584,8 +584,8 @@ def intersectionAndUnion(output, target, K, ignore_index=255):
 
 
 def load_state(path, model, optimizer=None, key="state_dict"):
-    rank = dist.get_rank()
-
+    rank = 0
+    
     def map_func(storage, location):
         return storage.cuda()
 
