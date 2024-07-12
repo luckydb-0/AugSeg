@@ -572,8 +572,10 @@ def intersectionAndUnion(output, target, K, ignore_index=255):
     # 'K' classes, output and target sizes are N or N * L or N * H * W, each value in range 0 to K - 1.
     assert output.ndim in [1, 2, 3]
     assert output.shape == target.shape
-    output = output.reshape(output.size).copy()
-    target = target.reshape(target.size)
+    output_shape = tuple(int(x) for x in output.shape)
+    output = output.reshape(output_shape).copy()
+    target_shape = tuple(int(x) for x in target.shape)
+    target = target.reshape(target_shape)
     output[np.where(target == ignore_index)[0]] = ignore_index
     intersection = output[np.where(output == target)[0]]
     area_intersection, _ = np.histogram(intersection, bins=np.arange(K + 1))
