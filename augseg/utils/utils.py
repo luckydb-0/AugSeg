@@ -587,8 +587,11 @@ def load_state(path, model, optimizer=None, key="state_dict"):
     rank = 0
     
     def map_func(storage, location):
-        return storage.cuda()
-
+        if torch.cuda.is_available():
+            return storage.cuda()
+        else:
+            return storage
+        
     if os.path.isfile(path):
         if rank == 0:
             print("=> loading checkpoint '{}'".format(path))
