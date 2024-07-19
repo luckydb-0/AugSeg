@@ -26,7 +26,7 @@ RUN wget -O /workspace/dataset.tar "http://host.robots.ox.ac.uk/pascal/VOC/voc20
 RUN mv /workspace/VOCdevkit/VOC2012/ /workspace/data/
 
 # Ensure the script is executable
-RUN chmod +x /workspace/scripts/zsing_run_voc.sh
+RUN chmod +x /workspace/scripts/zsing_run_voc_gpu.sh
 
 # Run the script
-CMD ["/bin/bash", "/workspace/AugSeg/scripts/zsing_run_voc.sh"]
+CMD ["/bin/bash", "/workspace/scripts/zsing_run_voc_gpu.sh"]

@@ -586,7 +586,11 @@ def intersectionAndUnion(output, target, K, ignore_index=255):
 
 
 def load_state(path, model, optimizer=None, key="state_dict"):
-    rank = 0
+    rank = ...
+    if dist.is_available():
+        rank = dist.get_rank()
+    else:
+        rank = 0
     
     def map_func(storage, location):
         if torch.cuda.is_available():

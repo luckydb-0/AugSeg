@@ -3,7 +3,8 @@ ngpu=2
 ROOT=/workspace
 
 # CUDA_VISIBLE_DEVICES=4,5,
-torchrun \
+#torchrun
+python -m torch.distributed.launch  \
     --nproc_per_node=${ngpu} \
     --node_rank=0 \
     --master_port=${tport} \
