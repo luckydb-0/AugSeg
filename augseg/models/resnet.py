@@ -18,8 +18,8 @@ __all__ = [
 # CODE_DIR = os.path.sep.join(lst_dir[:lst_dir.index(HOME_NAME)+1])
 
 model_urls = {
-    "resnet18": "/path/to/resnet18.pth",
-    "resnet34": "/path/to/resnet34.pth",
+    'resnet18': 'https://download.pytorch.org/models/resnet18-5c106cde.pth',
+    'resnet34': 'https://download.pytorch.org/models/resnet34-333f7ec4.pth',
     "resnet50": "/path/to/resnet50.pth",
     "resnet101": "/path/to/resnet101.pth",
     # "resnet50": os.path.join(CODE_DIR, "pretrained", "resnet50.pth"),
@@ -332,7 +332,7 @@ def resnet34(pretrained=True, pretrain_model_url=None, **kwargs):
             model_url = model_urls["resnet34"]
         else:
             model_url = pretrain_model_url
-        
+
         state_dict = torch.load(model_url)
 
         missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
@@ -358,7 +358,7 @@ def resnet50(pretrained=True, pretrain_model_url=None, **kwargs):
             model_url = model_urls["resnet50"]
         else:
             model_url = pretrain_model_url
-        
+
         state_dict = torch.load(model_url)
 
         missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
