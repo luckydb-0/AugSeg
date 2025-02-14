@@ -78,8 +78,8 @@ net: # Required.
   sync_bn: True
   ema_decay: 0.999
   encoder:
-    type: augseg.models.resnet.resnet50
-    pretrain: ./pretrained/resnet50.pth
+    type: augseg.models.resnet.resnet18
+    pretrain: ./pretrained/resnet18.pth
     # type: augseg.models.resnet.resnet101
     # pretrain: ./pretrained/resnet101.pth
     kwargs:
