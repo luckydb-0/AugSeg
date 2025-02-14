@@ -85,7 +85,7 @@ net: # Required.
     kwargs:
       zero_init_residual: True
       multi_grid: True
-      replace_stride_with_dilation: [False, False, True]  # [output_stride = 16]
+      #replace_stride_with_dilation: [False, False, True]  # [output_stride = 16]
       # replace_stride_with_dilation: [False, True, True]  # [output_stride = 8]
   decoder:
     type: augseg.models.decoder.dec_deeplabv3_plus
